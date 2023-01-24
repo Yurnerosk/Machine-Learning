@@ -35,3 +35,19 @@ It is important to understand that, in order to **minimize the objective functio
 - **negative** derivative means the square error **decreases** in such point. Thus the substraction, to move the variable to the right (opposite) direction.
 
 With the update done, a new epoch is set with the new updated values for **w** and **b**. It's noted that after some epochs those values do not change that much, and that's the time to **stop**.
+
+
+
+## MarI/O
+In this example, the objective is not to redistribute the code, but to analyse it's functions, solutions and requirements.
+
+
+
+Many functions are used to detect where Mario, enemies, platforms or mushrooms are in the state (moment of the game, like a "screenshot" of the situation). The position of everything was approximated into tiles so the learning algorithm could compute faster and simpler decisions, shortening processing times and reducing generations needed to clear the level.
+
+- getPositions(), getTile(dx, dy), getSprites(), getExtendedSprites()
+
+A function of creating a sigmoid shows that the author pretends to use a **standart logistic function** (also known as the **sigmoid function**), which has the property of being a continuous function with a (0,1) codomain. This can be used to easily label the tile configuration, a sort of ON/OFF label.
+
+- sigmoid(x)
+
