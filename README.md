@@ -6,6 +6,8 @@ In here you'll find various machine learning exercises found around the internet
 ## Gradient Descent
 In this example, we have a training set containing sales and spendings with media.
 
+(Gradient Descent is not a ML algorithm, but a solver for function minimization).
+
 The model is then trained with a training set containing 200 observations, each labeled as $(Spendings_i , Sales_i)$. The objective of this training is to create a linear model (**linear regression**), that looks like something like this:
 
 $$ f(x) = wx + b $$
