@@ -53,3 +53,41 @@ A function of creating a sigmoid shows that the author pretends to use a **stand
 
 - sigmoid(x)
 
+## Number Recognition
+This example is based on Michael Nielsen's book, "Neural Networks and Deep Learning", available in <http://neuralnetworksanddeeplearning.com/chap1.html>. 
+
+There is a large repository of labeled handwritten numbers called MNIST, and by using a python script "mnist_loader.py" <https://github.com/colah/nnftd/blob/master/code/mnist_loader.py>.
+
+This enables the creation of a machine learning model that can predict learn to read 28x28 pixel images that contains handwritten numbers.
+
+The code contains some functions:
+
+- feedforward(self, a)
+Remember about the basics, the function:
+
+$$ f(x) = wx + b $$
+
+that we saw earlier, is the structure of a *perceptron*. What we are using in this example are Sigmoid Neurons, that have the following form:
+
+$$ a' = \sigma (wa + b) $$
+
+and have the output in the codomain [0,1].
+
+- SGD(self, training_data, epochs, mini_batch_size, eta, test_data=None)
+Knowing how to feedforward, the function SGD (Stochastic Gradient Descent) is the muscle of the neural network. It will shuffle the training data, separate into mini batches from the training data, and...
+
+For mini_batch in mini_batches:
+
+- update_mini_batch(self, mini_batch, eta):
+
+Will take the weights & bias per mini batch, and will update them using the backpropagation function.
+
+- backprop(self, x, y):
+
+The backpropagation will use the labels attached to the images, and compare them to the Neural Network's answer. The bigger the error, bigger the update. Notice that in SGD, the updates are done by taking the average of the corrections for each labeled example so the training can be concluded faster. The path to the minima is not as linear as a single batch training, but in terms of computational effort, it is worth it.
+
+- **Some conclusions**:
+
+By plotting the weights, from the first epoch to the last epoch, the colors became more vibrant as the epochs passed, showing that the weights have "matured", and for some fun facts, showing the Hebbian therem: neurons that fire together, wire together (3Blue1Brown citation XD <https://www.youtube.com/watch?v=Ilg3gGewQ5U>).
+
+By each epoch, the success rate climbed up to 95%, which is very impressive. Notice that to achieve this result, the number of neurons in the layers far different from what I first imagined.
