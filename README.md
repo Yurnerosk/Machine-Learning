@@ -91,3 +91,8 @@ The backpropagation will use the labels attached to the images, and compare them
 By plotting the weights, from the first epoch to the last epoch, the colors became more vibrant as the epochs passed, showing that the weights have "matured", and for some fun facts, showing the Hebbian therem: neurons that fire together, wire together (3Blue1Brown citation XD <https://www.youtube.com/watch?v=Ilg3gGewQ5U>).
 
 By each epoch, the success rate climbed up to 95%, which is very impressive. Notice that to achieve this result, the number of neurons in the layers far different from what I first imagined.
+
+
+## Scikit-Learn Progression
+
+More in the Notebook
